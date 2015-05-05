@@ -1,15 +1,12 @@
 ##create symlink of files on desktop
 #-----------------------------------
 
-#mv any existing ~/ .dotfiles from HOME to 
+# MV ANY EXISTING ~/ .DOTFILES FROM HOME TO 
 bakdir=$HOME'/dotfiles.bak/'
-#bakdir='/tmp/bak/'
 
 
 #list of .dotfiles in dir
 dots=`find . -maxdepth 1 -type f | cut -d"/" -f2 | grep '^[\.].*$'`
-echo $(pwd)
-#echo -e '\E[47;35m'"\033[1m$dots\033[0m"
 echo -e "\033[1m$dots\033[0m"
 tput sgr0
 
@@ -37,8 +34,6 @@ for d in $dots; do
 	tput sgr0
 done
 
-#grpf=`ls -alrt $HOME/ | grep dots`
-#echo "$grpf"
 
 
 
