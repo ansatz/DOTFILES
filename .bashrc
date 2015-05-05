@@ -159,6 +159,7 @@ alias which='alias | /usr/bin/which --tty-only --read-alias --show-dot --show-ti
 alias path='echo -e ${PATH//:/\\n}'
 alias libpath='echo -e ${LD_LIBRARY_PATH//:/\\n}'
 alias cp='cp -i'
+unalias mv
 #alias mv='mv'
 alias mvi='mv -iv --backup=t' #no clobber, verbose, number backup
 alias gitlog='git log --decorate --pretty=oneline'
@@ -169,7 +170,6 @@ alias remote='cd ~/web-dev/js-bookmarklet/;python -m SimpleHTTPServer 8888'
 alias temp='echo -en "\033]0;sensors\a";watch -d -n 60 sensors'
 
 alias outside='weather -f fips1704314000 | tac'
-
 
 #vim-ipython
 #ipython 0.13.2
