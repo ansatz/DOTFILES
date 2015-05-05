@@ -8,6 +8,7 @@ bakdir=$HOME'/dotfiles.bak/'
 
 #list of .dotfiles in dir
 dots=`find . -maxdepth 1 -type f | cut -d"/" -f2 | grep '^[\.].*$'`
+echo $(pwd)
 #echo -e '\E[47;35m'"\033[1m$dots\033[0m"
 echo -e "\033[1m$dots\033[0m"
 tput sgr0
@@ -18,10 +19,10 @@ for d in $dots; do
 	di=$HOME'/'$d
 
 	# OLD LINKS if file has open can still access until closes
-	#u='UNLINKING '$di
-	#echo -e '\E[47;35m'"\033[1m$u\033[0m"
-	#tput sgr0
-	#unlink $di
+	u='UNLINKING '$di
+	echo -e '\E[47;35m'"\033[1m$u\033[0m"
+	tput sgr0
+	unlink $di
 
 	# OLD DOTFILES
 	dff=`diff -q $d $HOME'/'$d`
@@ -30,14 +31,14 @@ for d in $dots; do
 	mv -iv --backup=t $di $df
 	
 	# UPDATES
-	ln -sv $d $HOME'/'$d
+	ln -sv $(pwd)/$d $HOME/$d
 	l='LINKING '$d
 	echo -e '\E[47;35m'"\033[1m$l\033[0m""\n"
 	tput sgr0
 done
 
-grpf=`ls -alrt $HOME/ | grep dots`
-echo "$grpf"
+#grpf=`ls -alrt $HOME/ | grep dots`
+#echo "$grpf"
 
 
 
