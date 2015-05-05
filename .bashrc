@@ -159,7 +159,8 @@ alias which='alias | /usr/bin/which --tty-only --read-alias --show-dot --show-ti
 alias path='echo -e ${PATH//:/\\n}'
 alias libpath='echo -e ${LD_LIBRARY_PATH//:/\\n}'
 alias cp='cp -i'
-alias mv='mv -i'
+#alias mv='mv'
+alias mvi='mv -iv --backup=t' #no clobber, verbose, number backup
 alias gitlog='git log --decorate --pretty=oneline'
 alias share-mount='sudo mount -t cifs //192.168.0.103/share /home/solver/share -o user=guest'
 
