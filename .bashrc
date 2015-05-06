@@ -1,8 +1,5 @@
 export GOROOT=/usr/lib/go
 export GOPATH=$PATH:$GOROOT/bin
-#export perl
-#export PERL5LIB=~/lib/perl5/site_perl
-
 
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
@@ -86,70 +83,31 @@ case "$TERM" in
 esac
 
 # Alias definitions.
-# You may want to put all your additions into a separate file like
-# ~/.bash_aliases, instead of adding them here directly.
-# See /usr/share/doc/bash-doc/examples in the bash-doc package.
-
-#if [ -f ~/.bash_aliases ]; then
-#    . ~/.bash_aliases
-#fi
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     eval "`dircolors -b`"
     alias ls='ls --color=auto'
-    #alias dir='dir --color=auto'
-    #alias vdir='vdir --color=auto'
-
-    #alias grep='grep --color=auto'
-    #alias fgrep='fgrep --color=auto'
-    #alias egrep='egrep --color=auto'
 fi
 
-# some more ls aliases
-#alias ll='ls -l'
-#alias la='ls -A'
-#alias l='ls -CF'
-
-# enable programmable completion features (you don't need to enable
-# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
-# sources /etc/bash.bashrc).
-#if [ -f /etc/bash_completion ]; then
-#    . /etc/bash_completion
-#fi
 
 export LS_OPTIONS='--color=auto'
 eval `dircolors`
 alias ls='ls $LS_OPTIONS'
 
 PATH=$PATH:/home/solver/DROID/android-sdk-linux/tools
-# PATH=$PATH:/home/solver/Desktop/sandbox/stride_
-# PATH=$PATH:/home/solver/Desktop/sandbox/dssp
-# PATH=$PATH:/home/solver/Desktop/sandbox/oodiff
-# PATH=$PATH:/home/solver/Desktop/sandbox/git-oodiff
 PATH=$PATH:/home/solver/bin/
 PATH=$PATH:/home/solver/git/
 PATH=$PATH:/usr/lib/python2.6/
 PATH=$PATH:/usr/lib/python2.6/scipy
 PATH=$PATH:/home/solver/sandbox/LightTable/LightTable
 PATH=$PATH:/home/solver/bin1/conkeror2.sh
-#PATH=$PATH:/home/solver/util1/wlanscript.sh
 
 export PATH=$HOME/.local/bin:$PATH
 
-##BROWSER = $PATH:/usr/local/bin/dillo
-
-# vim mapping of ESC to CAPS
-#xmodmap ESC_CAPS
-#if [ "$PS1" ]; then
-#	xmodmap ~/.Xmodmap
-#fi
 
 #alias
-#alias sudo='sudo ' #adding space allows chain alias expansion
-#alias emacs='emacs -nw'
-alias bee="cd ~/bin1/bmndr/;python bmndr"
-alias kumj="cd ~/jobs_work/jobapp/;conkeror http://localhost:8080/ejobs;python APPLIED.py"
+alias sudo='sudo '
 alias skip='skippy-xd'
 alias o='gnome-open'
 alias ..='cd ..'
@@ -159,125 +117,50 @@ alias which='alias | /usr/bin/which --tty-only --read-alias --show-dot --show-ti
 alias path='echo -e ${PATH//:/\\n}'
 alias libpath='echo -e ${LD_LIBRARY_PATH//:/\\n}'
 alias cp='cp -i'
-#unalias mv
-#alias mv='mv'
 alias mvi='mv -iv --backup=t' #no clobber, verbose, number backup
 alias gitlog='git log --decorate --pretty=oneline'
-alias share-mount='sudo mount -t cifs //192.168.0.103/share /home/solver/share -o user=guest'
-
-alias remote='cd ~/web-dev/js-bookmarklet/;python -m SimpleHTTPServer 8888'
-
 alias temp='echo -en "\033]0;sensors\a";watch -d -n 60 sensors'
+
+
+alias share-mount='sudo mount -t cifs //192.168.0.103/share /home/solver/share -o user=guest'
+alias remote='cd ~/web-dev/js-bookmarklet/;python -m SimpleHTTPServer 8888'
+alias bee="cd ~/bin1/bmndr/;python bmndr"
+alias kumj="cd ~/jobs_work/jobapp/;conkeror http://localhost:8080/ejobs;python APPLIED.py"
 
 alias outside='weather -f fips1704314000 | tac'
 
 #vim-ipython
-#ipython 0.13.2
-#python 2.7.4
-#vim 7.4
 alias v7='/home/solver/vim/src/vim'
 stty stop undef # to unmap ctrl-s
-#workflow
-#ipython console
-#v7 
-#:IPython
-#c-s copy line/block, f5 load file, \s vim-ipython shell
 
-wws()
-{
-	firefox -P 'system' --no-remote
-}
-wwr()
-{
-	firefox -P 'research' --no-remote
-}
 
-wwd()
-{
-	firefox -P 'daily-read' --no-remote
-}
-
-fox()
-{
-	firefox -P 'def2' --no-remote
-}
-
-cdbook()
-{
-	cd ~/BOOKS; ls -lrt
-}
-cdbooks()
-{
-	book
-	cd ~/.aMule/Incoming
-	gnome-terminal --window-with-profile=Incoming -e "sh -c 'cd ~/.aMule/Incoming; ls -lrt'" 
-	#gnome-terminal -x cd ~/.aMule/Incoming; ls -lrt
-}
-
-pass()
-{
-	cd ~/pw; ./tclkit-linux-x86 gorilla-1.4.kit
-}
-
-cdr()
+function cdsort()
 {
 	cd "$1"; ls -alh -rt
 }
+alias cdr=cdsort
 
 
-ooo()
-{
-	gnome-open "$1"
-	gnome-open "$2"
-	gnome-open "$3"
-}
-
-function tennis()
-{
-	cd /home/solver/tennis/
-	vim -e tennis.md
-}
-
-function b1()
-{
-	cmus 
-	cmus-remote -P /home/solver/Music2/Brian\ Eno/Neroli.mp4 
-}
-
-function b2()
-{
-	#guru: quotes,outlook,history,zen
-	#personalInformatics: splits,handstands,mile-run-time,tennis
-	#tennis
-	#music
-	#brainworkshop
-	#email-daily-read
-	cd /home/solver/bin1/brain/brainworkshop
-	python brainworkshop.pyw
-}
-
-function kurt()
-{
-	cd /home/solver/write1/
-	vim -e general_express.md
-}
 function acer()
 {
 	cd /home/solver/Documents/
 	vim -e ACERv3-551g-x419-Ubntu13.04.md
 }
+
 function crash()
 {
 	cd /home/solver/crashplan/bin
 	./CrashPlanEngine start
 	./CrashPlanDesktop
 }
-function bat()
+
+function batterypower()
 {
 	sudo tlp-stat -b
 	sudo powertop;
 	psensor;
 }
+alias bat=batterypower
 	
 function lt() 
 {
@@ -294,101 +177,27 @@ function fname()
 	find . -iname "*$@*";
 }
 
-	
-#export WORKON_HOME=/home/solver/lib/pyvirtualenv
-#source /usr/local/bin/virtualenvwrapper.sh
 
 export JAVA_HOME=/usr/lib/jvm/java-6-sun
 
-
-#os()
-#{
-##!/bin/bash
-#while (("$#")); do
-##while[ $1 gt 1 ]; do
-#	if [ ! -e "$1" ]; then	#does file exist?
-#		#echo "$1 bad";
-#		echo continue
-#	fi
-#	"$(gnome-open "$1")"; #()subshell list
-#	shift;
-#	echo "$1"
-#	sleep 1
-#done
-#
-#}
-#
-
-#export PATH="$HOME/.rbenv/bin:$PATH"
-#eval "$(rbenv init -)"
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 COLUMNS=300
 
-#function parse_git_branch {
-#  ref=$(git symbolic-ref HEAD 2> /dev/null) || return echo "["${ref#refs/heads/}"]"
-#}
-##PS1="\w\$(parse_git_branch)\$ "
 
 
-#track your directory usage
-#export JPY=/home/solver/dev/j2-master/j.py # tells j.sh where the python script is
-#. /home/solver/dev/j2-master/j.sh          # provides the j() function
-
-
-
-#if [ -f /etc/bash_completion ]; then
-#    . /etc/bash_completion
-#fi
+alias rmnd='vim ~/.reminders'
 
 if [ -f /home/solver/dev/z-master/z.sh ]; then
 . /home/solver/dev/z-master/z.sh	
 fi
 
-# . /home/solver/dev/now.sh-master/now.sh
-#function now()
-#{
-#d -t 1 <&1
-#timeout=$?
-#
-#
-# loop forever
-#
-#while true
-#	do
-#	#
-#	# relay stdin to stdout		#
-#       while true
-#		do
-#			IFS= read -r -t 1 line; rc=$?
-#		               if [ $rc != 0 ]; then break; fi
-#						echo "$line"
-#	   done
-#	#
-#	# exit status is greater than 128 if the timeout is exceeded
-#	#
-#	if [ $rc != $timeout ]; then break; fi
-#
-#    #
-#	# print the timestamp
-#	#
-#    now=`date ${1:++"$1"}`
-#    echo -ne "$now\r" >&2
-#    done
-#}
-
-#source ~/dev/liquidprompt-master/liquidprompt
-
-#remind
-#remind -p | rem2ps > remind.ps
-#remind -p | rem2html > remind.html
-#remind -n | sort
-alias rmnd='vim ~/.reminders'
-function hrl()
+function hourly()
 {
 	( python ~/dev1/dashboard/hourly.py )
 }
+alias hrl=hourly
 function rlist()
 {
 	( cd ~/.jaldi; rem -nq | sort )
@@ -406,13 +215,6 @@ function todo()
 	weather
 }
 
-#WORK<thesis,n,r,todo,kum>
-#read the docs, got tabs to work
-#range,verb,noun
-#function work()
-#{
-#	vim -p "~/confs-papers-sldes/THESIS/thesis.tex" +"tabnew ~/repo1/vim-cmds.txt" +"tabnew ~/.reminders" +"tabnew ~/vimwiki/index.wiki" +"tabnew ~/.jaldi/kum.md" +"tabnew ~/.jaldi/backup.txt"
-#}
 
 function r100()
 {
@@ -420,47 +222,8 @@ function r100()
 }
 
 
-#function theList()
-#{
-#	#global
-#	declare -a str 
-#	
-#	#array set with ( )
-#	listL=(~/dev1/bash-scripts/pycooProjects/launcher.py ~/dev1/quantumCircuitGrover/grover.py ~/dev1/bash-scripts/pycooProjects/launcher.py ~/dev1/3d_print_file/3d.py ~/dev1/cancerGameTheory/strat.py ~/dev1/quaternion/quatr.py ~/dev1/pyknonfun/strat.py ~/READING/reading_docs/eloquentJavaScript/index.py)
-#	#xterm -e "echo "file list number: ${#listL[*]}";bash"
-#	echo "file list number: ${#listL[*]}"
-#	#for loop
-#	for fl in "${listL[@]}"
-#	do
-#		echo $fl
-#	done
-#}
 
 
-#function stench()
-#{
-#	#global
-#	declare -a str 
-#	
-#	#array set with ( )
-#	listL=(~/dev1/bash-scripts/pycooProjects/launcher.py ~/dev1/quantumCircuitGrover/grover.py ~/dev1/3d_print_file/3d.py ~/dev1/cancerGameTheory/strat.py ~/dev1/quaternion/quatr.py ~/dev1/pyknonfun/strat.py ~/READING/reading_docs/eloquentJavaScript/index.py)
-#	#xterm -e "echo "file list number: ${#listL[*]}";bash"
-#	echo "file list number: ${#listL[*]}"
-#	#for loop
-#	for fl in "${listL[@]}"
-#	do
-#		echo $fl
-#		str=$str' '$fl
-#		#echo $str
-#	done	
-#	# (blah )indicate parallel subshell
-#	vim -p $str ;
-#	firefox www.duolingo.com ;
-#}
-
-
-
-alias n='vim ~/repo1/vim-cmds.txt'
 alias note='vim ~/repo1/vim-cmds.txt'
 alias project='vim ~/.jaldi/.project.txt'
 alias backup='vim ~/.jaldi/backup.txt'
@@ -478,20 +241,6 @@ alias name='vim ~/repo1/names.txt'
 
 
 #--------network----------------------------------------------------
-
-# use alias expansion (whitespace) 
-
-alias sudo='sudo '
-
-# turn off wifi
-#function wlanoff()
-#{
-#	#alias wlanoff='nmcli dev disconnect iface wlan0'
-#	nmcli dev disconnect iface wlan0
-#	ifconfig wlan0 down
-#	dhclient -x
-#}
-
 function wlanoffx()
 {
 	#alias wlanoff='nmcli dev disconnect iface wlan0'
@@ -508,13 +257,11 @@ alias wlanon='bash /home/solver/util1/wlanscript.sh wlanons '
 alias wlanoff='bash /home/solver/util1/wlanscriptoff.sh wlanoffs '
 
 # list names of all connections 
-
 alias wlanname='nmcli -f name,autoconnect con list'
 
-#------------------------------------------------------------------
 
 
-#SET TITLE BAR
+#TITLEBAR--------------------------------------------------------
 if [ "$SHELL" = '/bin/bash' ]
 then
 	case $TERM in
@@ -532,16 +279,11 @@ export LIBRARY_PATH
 LD_LIBRARY_PATH=/usr/lib/x86_64-linux-gnu:$LD_LIBRARY_PATH 
 export LD_LIBRARY_PATH
 
-# enable bash completion in interactive shells
-#if [ -f /etc/bash_completion ]; then
-#	. /etc/bash_completion
-#fi
-
 # added by Anaconda 2.1.0 installer
 export PATH="/home/solver/anaconda/bin:$PATH"
 
-
-# docker
+#DOCKER-----------------------------------------------------------------------
+#docker
 function drm()
 {
 	#echo "$1"
@@ -596,14 +338,11 @@ function cap()
 	cd $wd
 }
 
+#GIT---------------------------------------------------------------------------
 # git alias
 parse_git_branch() {
 	git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* (.*)/(1)/'
 }
-
-#export PS1="[33[00m]u@h[33[01;34m] W [33[31m]$(parse_git_branch) [33[00m]$[33[00m] "
-#PS1="[33[00m]u@h[33[01;34m] W $(parse_git_branch)\$ "
-#PS1="[33[00m]u@h[33[01;34m]\w\$(parse_git_branch)\$ "
 gitf="\$(parse_git_branch)\$ "
 PS1="$PS1$gitf"
 
