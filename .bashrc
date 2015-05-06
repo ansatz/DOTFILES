@@ -282,6 +282,9 @@ export LD_LIBRARY_PATH
 # added by Anaconda 2.1.0 installer
 export PATH="/home/solver/anaconda/bin:$PATH"
 
+#issue with password-gorilla
+#export PATH="/usr/lib/libitcl3.4.so.1:$PATH"
+
 #DOCKER-----------------------------------------------------------------------
 #docker
 function drm()

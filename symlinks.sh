@@ -22,10 +22,10 @@ for d in $dots; do
 	unlink $di
 
 	# OLD DOTFILES
-	dff=`diff -q $d $HOME'/'$d`
-	echo -e '\E[47;35m'"\033[1m$dff\033[0m"
-	df=$bakdir$d
-	mv -iv --backup=t $di $df
+	#dff=`diff -q $d $HOME'/'$d`
+	#echo -e '\E[47;35m'"\033[1m$dff\033[0m"
+	#df=$bakdir$d
+	#mv -iv --backup=t $di $df
 	
 	# UPDATES
 	ln -sv $(pwd)/$d $HOME/$d
