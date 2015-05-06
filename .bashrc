@@ -159,7 +159,7 @@ alias which='alias | /usr/bin/which --tty-only --read-alias --show-dot --show-ti
 alias path='echo -e ${PATH//:/\\n}'
 alias libpath='echo -e ${LD_LIBRARY_PATH//:/\\n}'
 alias cp='cp -i'
-unalias mv
+#unalias mv
 #alias mv='mv'
 alias mvi='mv -iv --backup=t' #no clobber, verbose, number backup
 alias gitlog='git log --decorate --pretty=oneline'
