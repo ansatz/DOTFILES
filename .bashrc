@@ -131,7 +131,7 @@ alias outside='weather -f fips1704314000 | tac'
 
 #vim-ipython
 alias v7='/home/solver/vim/src/vim'
-stty stop undef # to unmap ctrl-s
+#stty stop undef # to unmap ctrl-s
 
 
 function cdsort()
@@ -196,6 +196,8 @@ fi
 function hourly()
 {
 	( python ~/dev1/dashboard/hourly.py )
+	#out=`python ~/dev1/dashboard/hourly.py | tac`
+	#echo $out
 }
 alias hrl=hourly
 function rlist()
