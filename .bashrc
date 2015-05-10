@@ -224,7 +224,7 @@ function r100()
 }
 
 
-
+#
 alias cover='vim ~/write1/resume/template/cover_letters_list.md'
 alias note='vim ~/repo1/vim-cmds.txt'
 alias project='vim ~/.jaldi/.project.txt'
