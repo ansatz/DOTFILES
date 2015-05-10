@@ -10,3 +10,4 @@
 	oneline = log --pretty=oneline
 	br = branch
 	la = log --pretty='format:%ad %h (%an): %s' --date=short
+	gr = log --pretty='format:%h %s' --graph
