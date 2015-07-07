@@ -261,7 +261,9 @@ alias wlanoff='bash /home/solver/util1/wlanscriptoff.sh wlanoffs '
 # list names of all connections 
 alias wlanname='nmcli -f name,autoconnect con list'
 
+#alias myip='curl -s checkip.dyndns.org | sed -e "s/.*Current IP Address: //"\ -e'
 
+#alias network='wlanname; myip'
 
 #TITLEBAR--------------------------------------------------------
 if [ "$SHELL" = '/bin/bash' ]
