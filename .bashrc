@@ -259,11 +259,11 @@ alias wlanon='bash /home/solver/util1/wlanscript.sh wlanons '
 alias wlanoff='bash /home/solver/util1/wlanscriptoff.sh wlanoffs '
 
 # list names of all connections 
-alias wlanname='nmcli -f name,autoconnect con list'
+alias wlanname='nmcli -f name,autoconnect,timestamp-real con list'
 
-#alias myip='curl -s checkip.dyndns.org | sed -e "s/.*Current IP Address: //"\ -e'
+alias myip='curl -s checkip.dyndns.org | sed -e "s/.*Current IP Address: //" -e "s/<.*$//"'
 
-#alias network='wlanname; myip'
+alias network='wlanname; echo "$(tput setaf 1) $(nmcli -f name,default,vpn con status)"; echo "$(tput setaf 1) $(myip)"'
 
 #TITLEBAR--------------------------------------------------------
 if [ "$SHELL" = '/bin/bash' ]
