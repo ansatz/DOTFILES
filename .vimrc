@@ -289,8 +289,10 @@ let NERDTreeShowHidden=1
 set nocompatible
 set autoindent
 set smartindent
+
 set tabstop=4
 set shiftwidth=4
+set expandtab
 set showmatch
 set vb t_vb=
 set ruler
